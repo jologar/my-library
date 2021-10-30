@@ -3,7 +3,7 @@ defmodule Mylibrary.Repo do
     otp_app: :mylibrary,
     adapter: Ecto.Adapters.Postgres
 
-  # Overwrite repo configuration in order to use environment variables for datasource connectionr
+  # Overwrite repo configuration in order to use environment variables for datasource connection
   def init(_, config) do
     config = config
       |> Keyword.put(:username, System.get_env("PGUSER"))
