@@ -8,16 +8,18 @@ defmodule Mylibrary.BookCard do
   def book_card(assigns) do
     ~H"""
     <div class="book-card">
-      <div class="book-card__image"></div>
-      <div class="book-card__info">
-        <div class="book-card__info__title">
-          <%= assigns.book.title %>
-        </div>
-        <div class="book-card__info__author">
-          <%= assigns.book.author %>
-        </div>
-        <div class="book-card__info__isbn">
-          <%= assigns.book.isbn %>
+      <div class="book-card__content">
+        <div class="book-card__image"></div>
+        <div class="book-card__info">
+          <div class="book-card__info__title">
+            <%= assigns.book.title %>
+          </div>
+          <div class="book-card__info__author">
+            <%= assigns.book.author %>
+          </div>
+          <div class="book-card__info__isbn">
+            <%= assigns.book.isbn %>
+          </div>
         </div>
       </div>
       <div class="book-card__delete"></div>

@@ -6,7 +6,12 @@
     background-color: var(--content-element-bg);
 }
 
-.book-card:hover {
+.book-card__content {
+    flex-grow: 1;
+    display: flex;
+}
+
+.book-card__content:hover {
     background-color: var(--content-element-hover-bg);
 }
 
