@@ -9,4 +9,8 @@ defmodule MylibraryWeb.BooksController do
     books = Repo.all(Book)
     render(conn, "index.html", books: books)
   end
+
+  def show(conn, _params) do
+    render(conn, "show.html")
+  end
 end
