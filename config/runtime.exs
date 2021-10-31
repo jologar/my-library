@@ -7,17 +7,37 @@ import Config
 # any compile-time configuration in here, as it won't be applied.
 # The block below contains prod specific runtime configuration.
 if config_env() == :prod do
-  database_url =
-    System.get_env("DATABASE_URL") ||
-      raise """
-      environment variable DATABASE_URL is missing.
-      For example: ecto://USER:PASS@HOST/DATABASE
-      """
+  # database_url =
+  #   System.get_env("DATABASE_URL") ||
+  #     raise """
+  #     environment variable DATABASE_URL is missing.
+  #     For example: ecto://USER:PASS@HOST/DATABASE
+  #     """
+
+  database_username = System.get_env("PGUSER") ||
+    raise "environment variable PGUSER is missing."
+
+  database_password = System.get_env("PGPASSWORD") ||
+    raise "environment variable PGUSER is missing."
+
+  database_name = System.get_env("PGDATABASE") ||
+    raise "environment variable PGDATABASE is missing."
+
+  database_host = System.get_env("PGHOST") ||
+    raise "environment variable PGHOST is missing."
+
+  database_port = String.to_integer(System.get_env("PGPORT")) ||
+    raise "environment variable PGPORT is missing."
 
   config :mylibrary, Mylibrary.Repo,
     # ssl: true,
     # socket_options: [:inet6],
-    url: database_url,
+    # url: database_url,
+    username: database_username,
+    password: database_password,
+    database: database_name,
+    hostname: database_host,
+    port: database_port,
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 
   # The secret key base is used to sign/encrypt cookies and other secrets.

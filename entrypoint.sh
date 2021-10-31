@@ -13,9 +13,9 @@ done
 if [[ -z `psql -Atqc "\\list $PGDATABASE"` ]]; then
   echo "Database $PGDATABASE does not exist. Creating..."
   createdb -E UTF8 $PGDATABASE -l en_US.UTF-8 -T template0
-  mix ecto.migrate
-  mix run priv/repo/seeds.exs
+  MIX_ENV=prod mix ecto.migrate
+  MIX_ENV=prod mix run priv/repo/seeds.exs
   echo "Database $PGDATABASE created."
 fi
 
-exec mix phx.server
+MIX_ENV=prod mix phx.server

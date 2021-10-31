@@ -17,7 +17,10 @@ defmodule MylibraryWeb.Router do
   scope "/", MylibraryWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    # Main route. Redirects to the books list
+    get "/", MainController, :index
+
+    resources "/books", BooksController
   end
 
   # Other scopes may use custom stacks.

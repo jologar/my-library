@@ -13,4 +13,4 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 ```
 3. execute `$ docker-compose build` in the project root to build the image. Be patient :)
 4. execute `$ docker-compose run` to start the container from the created image, executing the phoenix app.
-5. access the application in *http://localhost:4000*
+5. access the application in *http://localhost:4001*

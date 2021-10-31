@@ -10,6 +10,15 @@ services:
       # Here we define that it should build from the current directory
       context: .
     environment:
+      
+    
+      # As security and deployment in a CI environment widely exceeds the scope of this project,
+      # the secret key base is hardcoded here.
+      # NEVER hardcode secrets in files that will get persisted in version managing
+      #
+      # Alternative: set this variable in the secure CI environment variables configuration page of
+      # a version control environment like gitlab
+      SECRET_KEY_BASE: Z++lwNlE2xNnmNzRjnD7GDvNBAEA3PqJRh0IYSfYgEWJMQMOy9R6L4/GrSxJKYbw
       # Variables to connect to our Postgres server
       PGUSER: postgres
       PGPASSWORD: postgres
@@ -18,10 +27,10 @@ services:
       # Hostname of our Postgres container
       PGHOST: db
       # Port where is going to be deployed
-      APPPORT: 4000
+      PORT: 4001
     ports:
       # Mapping the port to make the Phoenix app accessible outside of the container
-      - "4000:4000"
+      - "4001:4001"
     depends_on:
       # The db container needs to be started before we start this container
       - db
