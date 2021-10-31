@@ -1,0 +1,26 @@
+.book-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 5px;
+    background-color: var(--content-element-bg);
+}
+
+.book-card:hover {
+    background-color: var(--content-element-hover-bg);
+}
+
+.book-card__image {
+    width: 140px;
+    height: 140px;
+    margin: 5px 5px 15px 5px;
+}
+
+.book-card__info {
+    flex-grow: 1;
+}
+
+.book-card__delete {
+    width: 50px;
+    background-color: red;
+}

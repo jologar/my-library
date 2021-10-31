@@ -1,0 +1,11 @@
+.book-list {
+    width: 100%;
+}
+
+.book-list__item {
+    margin-bottom: 10px;
+}
+
+.book-list__item:hover {
+    cursor: pointer;
+}

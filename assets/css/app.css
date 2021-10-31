@@ -1,5 +1,14 @@
-/* This file is for your main application CSS */
-@import "./phoenix.css";
+/* Style imports */
+@import "./colors.css";
+@import "./typography.css";
+
+/* Component styles */
+@import "./components/book_card.css";
+@import "./components/book_list.css";
+
+.app-body {
+  background-color: var(--general-bg);
+}
 
 /* Alerts and form errors used by phx.new */
 .alert {
