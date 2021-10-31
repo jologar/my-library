@@ -1,16 +1,22 @@
-alias Mylibrary.Repo, as: Repo
-alias Mylibrary.Book, as: Book
+alias Mylibrary.Services.Book, as: BookService
 
 defmodule MylibraryWeb.BooksController do
   use MylibraryWeb, :controller
 
   def index(conn, _params) do
     # Retrieve books
-    books = Repo.all(Book)
+    books = BookService.find_all()
     render(conn, "index.html", books: books)
   end
 
-  def show(conn, _params) do
-    render(conn, "show.html")
+  def show(conn, %{"id" => book_id}) do
+    # Retrieves the book with the id passed by :id uri param
+    book = BookService.find_by_id(book_id)
+    # TODO: Error page if no book found
+    render(conn, "show.html", book: book)
+  end
+
+  def edit(conn, %{"id" => book_id}) do
+
   end
 end

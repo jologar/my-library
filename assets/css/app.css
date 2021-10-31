@@ -5,6 +5,7 @@
 /* Component styles */
 @import "./components/book_card.css";
 @import "./components/book_list.css";
+@import "./components/book_panel.css";
 
 .app-body {
   background-color: var(--general-bg);

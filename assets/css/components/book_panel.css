@@ -1,0 +1,7 @@
+.book-panel {
+    background-color: var(--content-element-bg);
+    border-radius: 5px;
+    display: flex;
+}
+
+.book-panel__img {}
