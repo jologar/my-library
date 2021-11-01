@@ -1,4 +1,8 @@
 <div class="page-container">
+    <%= form_for @conn, Routes.books_path(@conn, :index), [class: "search-widget", method: :get], fn f -> %>
+        <%= search_input f, :query %>
+        <%= submit "Search" %>
+    <% end %>
     <div class="actions-row">
         <%= link to: Routes.books_path(@conn, :new), class: "action-add" do %>
             Add new book

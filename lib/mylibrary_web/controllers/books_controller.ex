@@ -4,9 +4,14 @@ alias Mylibrary.Schemas.Book, as: Book
 defmodule MylibraryWeb.BooksController do
   use MylibraryWeb, :controller
 
-  def index(conn, _params) do
+  @doc """
+    GET /books
+    renders the main books list
+  """
+  def index(conn, params) do
     # Retrieve books
-    books = BookService.find_all()
+    query = get_in(params, ["query"])
+    books = BookService.find_by_query(query)
     render(conn, "index.html", books: books)
   end
 

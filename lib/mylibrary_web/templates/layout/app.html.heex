@@ -3,6 +3,9 @@
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
   <header class="my-header">
     <h1>My Library Application</h1>
+    <%= link to: Routes.books_path(@conn, :index), class: "home-link" do %>
+        Home
+    <% end %>
   </header>
   <%= @inner_content %>
 </main>

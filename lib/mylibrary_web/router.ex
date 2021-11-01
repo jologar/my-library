@@ -20,6 +20,7 @@ defmodule MylibraryWeb.Router do
     # Main route. Redirects to the books list
     get "/", MainController, :index
 
+    # Routes for book resource manipulation and visualization
     resources "/books", BooksController
   end
 
