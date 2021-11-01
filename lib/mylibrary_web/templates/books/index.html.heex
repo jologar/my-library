@@ -1,1 +1,8 @@
-<Mylibrary.BookList.card_list books={@books} />
+<div class="page-container">
+    <div class="actions-row">
+        <%= link to: Routes.books_path(@conn, :new), class: "action-add" do %>
+            Add new book
+        <% end %>
+    </div>
+    <Mylibrary.BookList.card_list books={@books} />
+</div>

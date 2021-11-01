@@ -1,3 +1,11 @@
 <Mylibrary.BookPanel.panel book={@book}>
-    ACCIONES
+    <%= link to: Routes.books_path(@conn, :edit, assigns.book.id), class: "action-edit" do %>
+        Edit
+    <% end %>
+    <%= link to: Routes.books_path(@conn, :delete, assigns.book.id),
+        method: :delete,
+        data: [confirm: "Are you sure?"],
+        class: "action-delete" do %>
+        Delete
+    <% end %>
 </Mylibrary.BookPanel.panel>

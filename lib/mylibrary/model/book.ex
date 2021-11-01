@@ -13,7 +13,7 @@ defmodule Mylibrary.Schemas.Book do
   end
 
   @doc false
-  def changeset(book, attrs) do
+  def changeset(book, attrs \\ %{}) do
     book
     |> cast(attrs, [:title, :author, :isbn, :description, :pages])
     |> validate_required([:title, :author, :isbn, :description, :pages])

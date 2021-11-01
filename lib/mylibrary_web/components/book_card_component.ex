@@ -25,7 +25,11 @@ defmodule Mylibrary.BookCard do
             </div>
           </div>
         <% end %>
-      <div class="book-card__delete"></div>
+        <%= link to: Routes.books_path(MylibraryWeb.Endpoint, :delete, assigns.book.id),
+            method: :delete,
+            data: [confirm: "Are you sure?"],
+            class: "book-card__delete" do %>
+        <% end %>
     </div>
     """
   end
