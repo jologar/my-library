@@ -2,3 +2,10 @@
 @import "./book_list.css";
 @import "./book_panel.css";
 @import "./buttons.css";
+
+/* Pure style components */
+.my-separator {
+    border-bottom: 1px solid var(--main-dark);
+    margin: 10px auto;
+    width: 100%;
+}

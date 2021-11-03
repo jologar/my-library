@@ -1,26 +1,47 @@
 
+/* Common button styles */
+.my-btn {
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    height: 40px;
+    line-height: 38px;
+    min-width: 100px;
+    padding: 0 8px;
+    text-decoration: none;
+}
+
+.my-btn:hover {
+    cursor: pointer;
+}
+
+/* Succcess button */
 .my-success-btn {
     background-color: var(--clear-success);
     border: 2px solid var(--dark-success);
-    border-radius: 7%;
-    color: white;
-    width: 100px;
 }
 
 .my-success-btn:hover {
     background-color: var(--dark-success);
-    cursor: pointer;
 }
 
+/* Warning / Danger button */
 .my-warn-btn {
     background-color: var(--clear-danger);
     border: 2px solid var(--dark-danger);
-    border-radius: 7%;
-    color: white;
-    width: 100px;
 }
 
 .my-warn-btn:hover {
     background-color: var(--dark-danger);
-    cursor: pointer;
+}
+
+/* Primary btn */
+.my-primary-btn {
+    background-color: var(--clear-primary);
+    border: 2px solid var(--dark-primary);
+}
+
+.my-primary-btn:hover {
+    background-color: var(--dark-primary);
 }

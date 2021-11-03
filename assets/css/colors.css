@@ -7,6 +7,8 @@
     --content-element-hover-bg: #f1f1f1;
     --dark-danger: #d90429;
     --clear-danger: #ef233c;
-    --clear-success: #47ff47;
-    --dark-success: #00a300;
+    --clear-success: #47ff47ab;
+    --dark-success: #00a300ab;
+    --dark-primary: #0b3954;
+    --clear-primary: #087e8b;
 }

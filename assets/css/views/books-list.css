@@ -3,7 +3,7 @@
     flex-direction: row;
     gap: 20px;
     height: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     width: 100%;
 }
 
@@ -16,6 +16,11 @@
 }
 
 .actions-row {
+    align-content: center;
+    display: flex;
+    direction: row;
     height: 60px;
+    justify-content: flex-end;
+    margin-top: 20px;
     width: 100%;
 }
