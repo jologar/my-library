@@ -12,20 +12,21 @@ defmodule Mylibrary.BookCard do
     ~H"""
     <div class="book-card">
         <%= link to: Routes.books_path(MylibraryWeb.Endpoint, :show, assigns.book.id), class: "book-card__content" do %>
-          <div class="book-card__image">
-            <%= if assigns.book.image do %>
-              <img src={Routes.static_path(MylibraryWeb.Endpoint, assigns.book.image)} class="" />
-            <% end %>
-          </div>
+          <%= if assigns.book.image do %>
+            <img src={Routes.static_path(MylibraryWeb.Endpoint, assigns.book.image)} class="book-card__image" />
+          <% end %>
           <div class="book-card__info">
             <div class="book-card__info__title">
-              <%= assigns.book.title %>
+              <h6><%= assigns.book.title %></h6>
             </div>
-            <div class="book-card__info__author">
-              <%= assigns.book.author %>
+            <div class="book-card__info__field">
+              <span class="label">Author:</span> <%= assigns.book.author %>
             </div>
-            <div class="book-card__info__isbn">
-              <%= assigns.book.isbn %>
+            <div class="book-card__info__field">
+              <span class="label">ISBN:</span> <%= assigns.book.isbn %>
+            </div>
+            <div class="book-card__info__field">
+              <span class="label">Pages:</span> <%= assigns.book.pages %>
             </div>
           </div>
         <% end %>
@@ -33,6 +34,7 @@ defmodule Mylibrary.BookCard do
             method: :delete,
             data: [confirm: "Are you sure?"],
             class: "book-card__delete" do %>
+            <img src={Routes.static_path(MylibraryWeb.Endpoint, "/images/delete_white.png")} alt="Delete"/>
         <% end %>
     </div>
     """
