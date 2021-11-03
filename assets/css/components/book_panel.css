@@ -2,12 +2,47 @@
     background-color: var(--content-element-bg);
     border-radius: 5px;
     display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.book-panel__actions {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 60px;
+    justify-content: end;
+}
+
+.book-panel__content {
+    color: var(--dark-primary);
+    display: flex;
+    flex-direction: row;
 }
 
 .book-panel__image {
-    width: 220px;
     height: 350px;
-    margin: 5px 5px 15px 5px;
+    margin: 5px 5px 15px 5px;   
+}
+
+.book-panel__image img {
+    border-radius: 5px;
+    height: 100%;
+    width: 256px;
+}
+
+.book-panel__info {
+    margin-left: 10px;
+}
+
+.book-panel__info__field {
+    margin: 10px;
+}
+
+.book-panel__info__description {
+    font-style: italic;
+    margin: 30px 20px 10px 10px;
 }
 
 .book-card__panel img {

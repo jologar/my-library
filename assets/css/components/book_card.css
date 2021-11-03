@@ -39,10 +39,6 @@
     margin-bottom: 6px;
 }
 
-.book-card__info__field .label {
-    font-style: italic;
-}
-
 .book-card__delete {
     align-items: center;
     background-color: var(--dark-danger);

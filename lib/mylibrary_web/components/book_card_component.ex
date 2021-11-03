@@ -20,13 +20,13 @@ defmodule Mylibrary.BookCard do
               <h6><%= assigns.book.title %></h6>
             </div>
             <div class="book-card__info__field">
-              <span class="label">Author:</span> <%= assigns.book.author %>
+              <span class="my-label">Author:</span> <%= assigns.book.author %>
             </div>
             <div class="book-card__info__field">
-              <span class="label">ISBN:</span> <%= assigns.book.isbn %>
+              <span class="my-label">ISBN:</span> <%= assigns.book.isbn %>
             </div>
             <div class="book-card__info__field">
-              <span class="label">Pages:</span> <%= assigns.book.pages %>
+              <span class="my-label">Pages:</span> <%= assigns.book.pages %>
             </div>
           </div>
         <% end %>

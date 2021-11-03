@@ -7,7 +7,6 @@
         placeholder: "Seach by book title, author or isbn."] %>
     <%= submit "Search", [class: "my-btn my-primary-btn"] %>
 <% end %>
-<div class="my-separator"></div>
 <div class="actions-row">
     <%= link to: Routes.books_path(@conn, :new), class: "my-btn my-success-btn" do %>
         Add new book

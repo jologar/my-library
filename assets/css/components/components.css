@@ -3,6 +3,11 @@
 @import "./book_panel.css";
 @import "./buttons.css";
 
+/* General component styles */
+.my-label {
+    font-style: italic;
+}
+
 /* Pure style components */
 .my-separator {
     border-bottom: 1px solid var(--main-dark);
