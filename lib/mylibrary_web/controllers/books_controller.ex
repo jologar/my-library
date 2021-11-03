@@ -40,7 +40,7 @@ defmodule MylibraryWeb.BooksController do
   def new(conn, _params) do
     changeset = Book.changeset(%Book{})
     # Render the book creation page
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", %{endpoint: :create, changeset: changeset})
   end
 
   def edit(conn, %{"id" => book_id}) do
@@ -49,7 +49,7 @@ defmodule MylibraryWeb.BooksController do
     changeset = Book.changeset(book)
     # TODO: Error handling
     # Render the edit page passing the info of the book to edit
-    render(conn, "edit.html", %{book: book, changeset: changeset})
+    render(conn, "edit.html", %{book: book, endpoint: :update, changeset: changeset})
   end
 
   def delete(conn, %{"id" => book_id}) do
