@@ -60,10 +60,12 @@ defmodule MylibraryWeb.BooksController do
 
   def update(conn, %{"id" => book_id} = params) do
     book_info = params["book"]
-    file_path = BookImageService.upload_book_image(book_info)
+    if file_path = BookImageService.upload_book_image(book_info) do
+      ^book_info = Map.put(book_info, "image", file_path)
+    end
     # Update the book with the info retrieved by parameters
     BookService.find_by_id(book_id)
-      |> Book.changeset(Map.put(book_info, "image", file_path))
+      |> Book.changeset(book_info)
       |> BookService.update()
     # Redirect to the updated book page
     redirect(conn, to: Routes.books_path(conn, :show, book_id))
