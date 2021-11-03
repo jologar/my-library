@@ -1,0 +1,15 @@
+/* Grid layout definition */
+
+.my-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    width: 100%;
+}
+
+.my-row {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}

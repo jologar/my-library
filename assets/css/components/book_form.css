@@ -1,0 +1,49 @@
+.book-form {
+    background-color: var(--content-element-bg);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 100%;
+}
+
+.book-form__actions {
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 10px;
+    width: 100%;
+}
+
+.book-form__image {
+    height: 100%;
+    margin: 5px 5px 15px 5px;  
+    width: min-content; 
+}
+
+.book-form__image img {
+    border-radius: 5px;
+    height: 100%;
+    margin-bottom: 25px;
+    width: 256px;
+}
+
+.book-form__image__input {
+    margin-top: 25px;
+}
+
+.book-form__field {
+    padding: 5px 10px 5px 10px;
+    width: 100%;
+}
+
+.book-form__field input {
+    width: 100%;
+}
+
+.book-form__field__textarea {
+    resize: none;
+    height: 100px;
+    width: 100%;
+}

@@ -1,4 +1,5 @@
-<%= form_for @changeset, Routes.books_path(@conn, :create), [multipart: true], fn f -> %>
+<div class="my-panel">
+  <%= form_for @changeset, Routes.books_path(@conn, :create), [multipart: true], fn f -> %>
   <label>
     Title: <%= text_input f, :title %>
   </label>
@@ -24,4 +25,5 @@
   </label>
 
   <%= submit "Submit" %>
-<% end %>
+  <% end %>
+</div>

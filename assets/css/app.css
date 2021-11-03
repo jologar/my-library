@@ -2,6 +2,9 @@
 @import "./colors.css";
 @import "./typography.css";
 
+/* Layout styling */
+@import "./layout.css";
+
 /* Application styles */
 @import "./views/views.css";
 
