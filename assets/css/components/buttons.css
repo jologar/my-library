@@ -1,0 +1,26 @@
+
+.my-success-btn {
+    background-color: var(--clear-success);
+    border: 2px solid var(--dark-success);
+    border-radius: 7%;
+    color: white;
+    width: 100px;
+}
+
+.my-success-btn:hover {
+    background-color: var(--dark-success);
+    cursor: pointer;
+}
+
+.my-warn-btn {
+    background-color: var(--clear-danger);
+    border: 2px solid var(--dark-danger);
+    border-radius: 7%;
+    color: white;
+    width: 100px;
+}
+
+.my-warn-btn:hover {
+    background-color: var(--dark-danger);
+    cursor: pointer;
+}

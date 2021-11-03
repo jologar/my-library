@@ -1,0 +1,21 @@
+.search-widget {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.search-widget__icon img {
+    height: 40px;
+}
+
+.search-widget__input {
+    flex-grow: 1;
+}
+
+.actions-row {
+    height: 60px;
+    width: 100%;
+}

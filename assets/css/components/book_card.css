@@ -32,5 +32,5 @@
 
 .book-card__delete {
     width: 50px;
-    background-color: red;
+    background-color: var(--dark-danger);
 }

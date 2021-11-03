@@ -1,12 +1,15 @@
-<div class="page-container">
-    <%= form_for @conn, Routes.books_path(@conn, :index), [class: "search-widget", method: :get], fn f -> %>
-        <%= search_input f, :query %>
-        <%= submit "Search" %>
-    <% end %>
-    <div class="actions-row">
-        <%= link to: Routes.books_path(@conn, :new), class: "action-add" do %>
-            Add new book
-        <% end %>
+<%= form_for @conn, Routes.books_path(@conn, :index), [class: "search-widget", method: :get], fn f -> %>
+    <div class="search-widget__icon">
+        <img src={Routes.static_path(@conn, "/images/search.png")} alt="Search"/>
     </div>
-    <Mylibrary.BookList.card_list books={@books} />
+    <%= search_input f, :query, [
+        class: "search-widget__input", 
+        placeholder: "Seach by book title, author or isbn."] %>
+    <%= submit "Search", [class: "my-success-btn"] %>
+<% end %>
+<div class="actions-row">
+    <%= link to: Routes.books_path(@conn, :new), class: "action-add" do %>
+        Add new book
+    <% end %>
 </div>
+<Mylibrary.BookList.card_list books={@books} />
