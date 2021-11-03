@@ -1,0 +1,25 @@
+.my-header {
+    background-color: var(--main-dark);
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    padding: 0 10px 0 10px;
+}
+
+.my-header__title {
+    color: var(--general-bg);
+    flex-grow: 8;
+}
+
+.my-header__actions {
+    align-content: flex-end;
+    flex-grow: 2;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-header__actions__link {
+    align-self: center;
+    flex-grow: 1;
+    text-align: end;
+}

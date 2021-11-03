@@ -1,8 +1,10 @@
+alias Mylibrary.Services.BookImage, as: BookImageService
 alias Mylibrary.Services.Book, as: BookService
 alias Mylibrary.Schemas.Book, as: Book
 
 defmodule MylibraryWeb.BooksController do
   use MylibraryWeb, :controller
+  require Logger
 
   @doc """
     GET /books
@@ -17,11 +19,13 @@ defmodule MylibraryWeb.BooksController do
 
   def create(conn, params) do
     book_info = params["book"]
+    file_path = BookImageService.upload_book_image(book_info)
     # Create a new user with the info passed by parameter
     %Book{}
-      |> Book.changeset(book_info)
+      |> Book.changeset(Map.put(book_info, "image", file_path))
       |> BookService.insert()
     # TODO: Handle errors
+    # If error in insertion, return flash message and remove picture if saved
     # Once created, we redirect to the main books list
     redirect(conn, to: Routes.books_path(conn, :index))
   end
@@ -56,9 +60,10 @@ defmodule MylibraryWeb.BooksController do
 
   def update(conn, %{"id" => book_id} = params) do
     book_info = params["book"]
+    file_path = BookImageService.upload_book_image(book_info)
     # Update the book with the info retrieved by parameters
     BookService.find_by_id(book_id)
-      |> Book.changeset(book_info)
+      |> Book.changeset(Map.put(book_info, "image", file_path))
       |> BookService.update()
     # Redirect to the updated book page
     redirect(conn, to: Routes.books_path(conn, :show, book_id))

@@ -8,6 +8,7 @@ defmodule Mylibrary.Schemas.Book do
     field :isbn, :string
     field :pages, :integer
     field :title, :string
+    field :image, :string
 
     timestamps()
   end
@@ -15,7 +16,7 @@ defmodule Mylibrary.Schemas.Book do
   @doc false
   def changeset(book, attrs \\ %{}) do
     book
-    |> cast(attrs, [:title, :author, :isbn, :description, :pages])
+    |> cast(attrs, [:title, :author, :isbn, :description, :pages, :image])
     |> validate_required([:title, :author, :isbn, :description, :pages])
   end
 end

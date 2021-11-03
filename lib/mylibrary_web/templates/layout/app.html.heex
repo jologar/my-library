@@ -2,10 +2,14 @@
   <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
   <header class="my-header">
-    <h1>My Library Application</h1>
-    <%= link to: Routes.books_path(@conn, :index), class: "home-link" do %>
-        Home
-    <% end %>
+    <div class="my-header__title">
+      <h3>My Library Application</h3>
+    </div>
+    <div class="my-header__actions">
+      <%= link to: Routes.books_path(@conn, :index), class: "my-header__actions__link" do %>
+          <img src={Routes.static_path(@conn, "/images/home.png")} alt="Home"/>
+      <% end %>
+    </div>
   </header>
   <%= @inner_content %>
 </main>

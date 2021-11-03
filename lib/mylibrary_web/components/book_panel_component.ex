@@ -1,5 +1,8 @@
+alias MylibraryWeb.Router.Helpers, as: Routes
+
 defmodule Mylibrary.BookPanel do
   use Phoenix.Component
+  use Phoenix.HTML
 
   def panel(assigns) do
     ~H"""
@@ -9,6 +12,9 @@ defmodule Mylibrary.BookPanel do
       </div>
       <div class="book-panel__content">
         <div class="book-panel__img">
+          <%= if assigns.book.image do %>
+            <img src={Routes.static_path(MylibraryWeb.Endpoint, assigns.book.image)} class="" />
+          <% end %>
         </div>
         <div class="book-panel__info">
             <div class="book-panel__title">

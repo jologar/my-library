@@ -1,6 +1,8 @@
 /* Definition of global common colors */
 :root {
-    --general-bg:  #f0eaea;
+    --main-dark: #0a9396;
+    --main-clear: #94d2bd;
+    --general-bg:  #d8f3dc;
     --content-element-bg: #ffffff;
     --content-element-hover-bg: #f1f1f1;
 }

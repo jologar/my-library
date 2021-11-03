@@ -12,7 +12,11 @@ defmodule Mylibrary.BookCard do
     ~H"""
     <div class="book-card">
         <%= link to: Routes.books_path(MylibraryWeb.Endpoint, :show, assigns.book.id), class: "book-card__content" do %>
-          <div class="book-card__image"></div>
+          <div class="book-card__image">
+            <%= if assigns.book.image do %>
+              <img src={Routes.static_path(MylibraryWeb.Endpoint, assigns.book.image)} class="" />
+            <% end %>
+          </div>
           <div class="book-card__info">
             <div class="book-card__info__title">
               <%= assigns.book.title %>

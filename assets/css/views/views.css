@@ -1,0 +1,9 @@
+@import "./header.css";
+
+/* General styling */
+
+
+.app-body {
+    background-color: var(--general-bg);
+    margin: 0px;
+}

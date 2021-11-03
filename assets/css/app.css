@@ -2,13 +2,11 @@
 @import "./colors.css";
 @import "./typography.css";
 
+/* Application styles */
+@import "./views/views.css";
+
 /* Component styles */
 @import "./components/components.css";
-
-
-.app-body {
-  background-color: var(--general-bg);
-}
 
 /* Alerts and form errors used by phx.new */
 .alert {

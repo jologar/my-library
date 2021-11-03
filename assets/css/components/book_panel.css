@@ -4,4 +4,13 @@
     display: flex;
 }
 
-.book-panel__img {}
+.book-panel__image {
+    width: 220px;
+    height: 350px;
+    margin: 5px 5px 15px 5px;
+}
+
+.book-card__panel img {
+    width: 200px;
+    height: 400px;
+}
