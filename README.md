@@ -41,6 +41,8 @@ In the current iteration, there are the following important tasks to complete:
 4. **Pagination:** The list of books *must*
 be paginated in order to have a more manageable interface and to avoid the previsible performance issues derivated of loading an humongous list of books from backend into the browser.
 
+5. **Cleaning of uploads folder**: The uploads folder *must* be cleaned of images not used anymore. Each time a book is deleted from the database or a book image is changed by the user, the "orphan" image *must* be deleted.
+
 ## Further development:
 
 The following features and improvements are planned for future releases:
