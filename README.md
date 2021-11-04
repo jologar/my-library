@@ -57,13 +57,24 @@ Implementing Phoenix events there, will decouple reusable code from handling the
 **Instantaneous form validation**: Right now, the forms are validated agains the changelog of the [Book](https://github.com/jologar/my-library/blob/main/lib/mylibrary/model/book.ex) Schema, thus the user needs to submit the form with all the values filled in to receive feedback about the input information.
 The main idea is to make possible to have a live validation on the fields, debouncing the input information change done by the user and obtaining the needed feedback while her/he is filling the form.
 
-**Cathegory search**: The user should have the possibility of managing her or his books easier, giving her or him the possibility of clasifying and, then, searching them by cathegory.
+### Cathegory search: 
+
+The user should have the possibility of managing her or his books easier, giving her or him the possibility of clasifying and, then, searching them by cathegory.
+
 *Cathegory* will be a new schema in the system, related to the *Book* one in a many-to-one relatioship (one cathegory, many books). That should be that way, instead a simple string field in *Book*, to make the search more performant (it will be a foreign key and so, indexed), selectors in search and creation/edition forms more performant also, and it will provide an easier way of creating new cathegories and editing the existing ones.
 
-**User session and authentication**: Although it's not an application that manages critical information, a login system should be provided not only to boost privacy, but also to make possible for the user to handle it's personal library. 
+### User session and authentication: 
+
+Although it's not an application that manages critical information, a login system should be provided not only to boost privacy, but also to make possible for the user to handle it's personal library.
+
 Achieved implementing a new *User* Schema, with username and password, the user then will be able to manage it's own books.
 
 That can be achieved by two ways:
 
 1. a many-to-one relationship between *User* and *Book*, and then returning a list per user, which will create an isolated set of books for each application user.
 2. a many-to-many relationship between *User* and *Book*, creating a common and collaborative set of books for all users that could then be added to their respective personal libraries.
+
+
+### API Interaction:
+
+When creating a new book for the list, the user could be able to look for existing books through a third party API, with which the application will interact to show a list of possible books based on some search terms introduced by the user. Then, on book selection, the Controller will build (through a Service) a *Book* using the API selected object info, and persisting it into the database.
