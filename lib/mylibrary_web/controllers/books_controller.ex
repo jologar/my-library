@@ -59,9 +59,11 @@ defmodule MylibraryWeb.BooksController do
   end
 
   def update(conn, %{"id" => book_id} = params) do
-    book_info = params["book"]
-    if file_path = BookImageService.upload_book_image(book_info) do
-      ^book_info = Map.put(book_info, "image", file_path)
+    # If has an image: set the correct image field into the book_info map to correctly update Book
+    book_info = if file_path = BookImageService.upload_book_image(params["book"]) do
+      Map.put(params["book"], "image", file_path)
+    else
+      params["book"]
     end
     # Update the book with the info retrieved by parameters
     BookService.find_by_id(book_id)
